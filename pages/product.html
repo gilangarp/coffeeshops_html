@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../style/output.css" rel="stylesheet">
+    <script src="../javascript/navbar.js"></script>
+    <style>
+        .promo-container::-webkit-scrollbar {
+          display: none;
+        }
+        /* Menyembunyikan dropdown saat halaman dimuat */
+        .dropdown-menu {
+            display: none;
+        }
+
+        /* Menampilkan dropdown saat class 'show' ditambahkan */
+        .dropdown-menu.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class=" py-2 px-10 md:px-20 bg-black bg-opacity-25 shadow md:flex md:justify-between md:items-center">
+
+        <div class=" flex justify-between items-center "> 
+
+            <span class="flex items-center gap-4">
+                <div class="flex items-center">
+                    <img class="filter brightness-0 invert w-6 h-auto" src="../assets/icons/Vector.svg" alt="..." >
+                    <h1 class="text-xl pl-2 text-white">coffee Shop</h1>
+                </div>
+    
+                <nav class="text-sm flex gap-4 items-center text-white">
+                    <li class="hidden md:block"><a href="../index.html">Home</a></li>
+                    <li class=" hidden md:block"><a class="border-b-2 border-primary pb-2"" href="/">Product</a></li>
+                </nav>
+                
+            </span>
+
+            <div class="cursor-pointer teblock md:hidden text-white">    
+                <svg onclick="menu(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                      
+            </div>
+
+        </div>
+
+        <nav class="hidden md:block" id="drop" >
+            <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-black bg-opacity-25 md:bg-transparent w-full left-0 md:w-auto md:py-0 py-6 md:pl-0 pl-7 top-[-400] transition-all ease-in duration-500 ">
+
+                <li class="mx-4 my-2 md:my-0"><a href="/" class="block md:hidden text-white">Home</a></li>
+                <li class="mx-4 md:my-0""><a href="./pages/product.html" class="block md:hidden text-white">Product</a></li> 
+
+                <li class="mx-4 my-2 md:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                </a></li>
+                <li class="mx-4 my-2 md:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                </a></li>
+                
+                <li class="mx-4 my-2 md:my-0""><a href="./pages/login.html"><button  class="navbar-nav sign-in rounded-lg px-6 py-2 border border-white bg-transparent text-white text-sm">Sign In</button></a></li>
+                <li class="mx-4 my-2 md:my-0""><a href="./pages/register.html"><button class="navbar-nav sign-up rounded-lg px-6 py-2 bg-orange-500 opacity-100 border-none text-sm">Sign Up</button></a></li>  
+
+            </ul> 
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="bg-retengle299 w-full h-[40vh] bg-cover bg-center flex items-center justify-center">
+            <p class="text-center text-heading_mobile lg:text-heading_desktop w-full font-medium text-white lg:w-[880px]">We Provide Good Coffee and Healthy Meals</p>
+        </section>
+
+        <section class="pl-10 pr-10 lg:pl-20 lg:pr-20">
+
+            <section class="py-2 flex justify-between ">
+
+                <h1 class="text-heading_mobile lg:text-heading_desktop text-black text-plus-jakarta ml-0">Today's <span class="text-[#8E6447]">Promos</span></h1>
+
+                <div class="hidden lg:block">
+                    <button id="btn-scroll-left" type="button" class="py-2 px-2 rounded-[50%] bg-[#E8E8E8] "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                      </svg>
+                    </button>
+                    <button id="btn-scroll-right" type="button" class="py-2 px-2 rounded-[50%] bg-primary"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                      </svg>
+                    </button>
+            </section>
+
+            <section class="py-2">
+
+                <div id="scroll" class="min-w-full grid gap-3 grid-cols-[1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr,] promo-container overflow-x-auto snap-mandatory snap-x lg:snap-none ">
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="w-[335px] h-fit bg-[#88B788] overflow-hidden rounded-3xl grid grid-cols-[auto,1fr] snap-center grid-rows-1">
+                        
+                        <div class="w-24 h-[80px] pl-[1%] rounded-3xl">
+                            <img src="../assets/images/image 46.png" alt="" class="object-cover">
+                        </div>
+                        
+                        <div class="w-48 h-[85px] flex flex-col justify-between">
+                            <div>
+                                <h1 class="text-sm font-bold">HAPPY MOTHER’S DAY!</h1>
+                            <h2 class="text-sm">Get one of our favorite menu for free!</h2>
+                            </div>
+                            <li class="text-sm text-white font-normal">
+                                <a href="">Klaim Kupon</a>
+                            </li>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <section class="pl-10 pr-10 lg:pl-20 lg:pr-20 grid gap-3" >
+
+            <h1 class="text-heading_mobile lg:text-heading_desktop text-black text-plus-jakarta ml-0">Our <span class="text-[#8E6447]">Product</span></h1>
+
+            <div class="grid grid-cols-1 grid-rows-[auto,1fr] lg:grid-cols-[30%,70%] lg:grid-rows-1">
+
+                <div class="grid gap-3 lg:hidden">
+
+                    <div class="flex justify-between p-1 rounded-lg text-black border border-primary">
+                        <input class="bg-transparent border-none outline-none focus:ring-0 focus:border-transparent" type="text" name="searchFilter" placeholder="Search Your Product">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6 text-slate-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </div>
+    
+                    <div class=" grid grid-cols-[1fr,1fr,auto] gap-2">
+    
+                        <div>
+                            <div class="">
+        
+                                <button id="categoryBtn" type="button" class="flex items-center justify-center gap-2 py-2 w-full px-3 bg-primary rounded-md">
+                                    Category
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                                                   
+                                </button>
+        
+                                <div id="categoryDropdown" class="absolute dropdown-menu w-fit py-3 px-10 rounded-lg bg-slate-300 text-sm">
+                                    <option value="">All Products</option>
+                                    <option value="">Favorite Coffee</option>
+                                    <option value="">Favorite Non-Coffee</option>
+                                    <option value="">Favorite Foods</option>
+                                    <option value="">Add-Ons</option>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div>
+                            <div class="">
+        
+                                <button id="categoryBtn" type="button" class="flex items-center justify-center gap-2 py-2 w-full px-3 bg-primary rounded-md">
+                                    Category
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                                                   
+                                </button>
+        
+                                <div id="categoryDropdown" class="absolute dropdown-menu w-fit p-2 rounded-lg bg-slate-300 text-sm">
+                                    <option value="">All Products</option>
+                                    <option value="">Favorite Coffee</option>
+                                    <option value="">Favorite Non-Coffee</option>
+                                    <option value="">Favorite Foods</option>
+                                    <option value="">Add-Ons</option>
+                                </div>
+                            </div>
+    
+                        </div>
+        
+                        <button class="justify-center gap-2 py-2 w-full px-3 bg-primary rounded-md">
+                            Reset
+                        </button>
+        
+                    </div>
+    
+                </div>
+    
+                <div class="hidden lg:block">
+                    <div class="filter-menu basis-1/3 bg-black rounded-lg flex flex-col p-8 gap-4 h-max	">
+            
+                        <section class="filter flex flex-row justify-between text-white w-full ">
+                            <div>
+                                <h4 class="text-2xl	">Filter</h4>
+                            </div>
+                            <button>
+                                <h5>Reset Filter</h5>
+                            </button>
+                        </section>
+        
+                        <section class="InputSearch text-white  flex flex-col gap-2">
+                            <label class="text-xl " for="searchFilter">search</label>
+                            <input class="rounded-lg h-8" type="text" name="searchFilter" placeholder="Search Your Product">
+                        </section>
+        
+                        <section class="category text-white flex flex-col gap-4">
+                            <div class="flex flex-col gap-2">
+                                <p class="text-xl text-white">Category</p>
+                                <form class=" flex flex-col gap-4 ">
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-2 bg-black" type="checkbox" id="Favorite Product"
+                                            name="Favorite Product" value="Favorite Product">
+                                        <label for="Favorite Product"> Favorite Product</label><br>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-2" type="checkbox" id="coffee" name="coffee"
+                                            value="coffee">
+                                        <label for="coffee"> Coffee</label>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-3xl" type="checkbox" id="foods" name="foods"
+                                            value="foods">
+                                        <label for="foods"> Foods</label>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-3xl" type="checkbox" id="add-on" name="add-on"
+                                            value="add-on">
+                                        <label for="add-on"> Add-on</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <p class="text-xl text-white">Sort By</p>
+                                <form class=" flex flex-col gap-4 ">
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-2 bg-black" type="checkbox" id="Buy 1 get 1"
+                                            name="Buy 1 get 1" value="Buy 1 get 1">
+                                        <label for="Buy 1 get 1">Buy 1 get 1</label><br>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-2" type="checkbox" id="Flash sale" name="Flash sale"
+                                            value="Flash sale">
+                                        <label for="Flash sale">Flash sale</label>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-3xl" type="checkbox" id="Birthday Package"
+                                            name="Birthday Package" value="Birthday Package">
+                                        <label for="Birthday Package">Birthday Package</label>
+                                    </div>
+                                    <div class="gap-4 flex flex-row ">
+                                        <input class="w-6 h-6 rounded-3xl bg-black" type="checkbox" id="Cheap" name="Cheap"
+                                            value="Cheap">
+                                        <label for="Cheap">Cheap</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+        
+                        <section class="flex flex-col gap-4">
+                            <div>
+                                <p class="text-xl text-white">
+                                    Range Price
+                                </p>
+                            </div>
+                            <div>
+                                <div class="slidecontainer w-full">
+                                    <input type="range" min="1" max="100" value="25" class="slider w-full" id="myRange1">
+                                </div>
+                            </div>
+                        </section>
+        
+                        <section>
+                            <button class="bg-[#FF8906] w-full h-8 rounded-lg">
+                                Apply Filter
+                            </button>
+        
+                        </section>
+        
+                    </div>
+                </div>
+
+                <div class="slide-content grid justify-items-center items-center grid-cols-1 lg:grid-cols-[1fr,1fr]  gap-9 h-fit bg-white p-5">
+
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+
+            </div>
+            
+
+        </section>
+
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter and Sort Dropdown</title>
+<style>
+    /* CSS untuk styling */
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    select {
+        padding: 8px;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>Filter and Sort By:</h2>
+    <label for="filter">Filter Product:</label>
+    <select id="filter">
+        <option value="all">All Products</option>
+        <option value="coffee">Favorite Coffee</option>
+        <option value="non-coffee">Favorite Non-Coffee</option>
+        <option value="foods">Favorite Foods</option>
+        <option value="add-on">Add-Ons</option>
+    </select>
+
+    <label for="sort">Sort By:</label>
+    <select id="sort">
+        <option value="default">Default</option>
+        <option value="buy-one-get-one">Buy 1 Get 1</option>
+        <option value="flash-sale">Flash Sale</option>
+        <option value="birthday-package">Birthday Package</option>
+        <option value="cheap">Cheap</option>
+    </select>
+
+    <div id="product-list">
+        <!-- Daftar produk akan ditampilkan di sini -->
+        <p>Placeholder for product list...</p>
+    </div>
+
+    <script>
+        // JavaScript untuk menangani perubahan pada dropdown filter dan sort
+        const productList = [
+            { name: "Product 1", category: "coffee", sort: "buy-one-get-one" },
+            { name: "Product 2", category: "non-coffee", sort: "flash-sale" },
+            { name: "Product 3", category: "foods", sort: "birthday-package" },
+            { name: "Product 4", category: "add-on", sort: "cheap" },
+            { name: "Product 5", category: "coffee", sort: "cheap" },
+            { name: "Product 6", category: "non-coffee", sort: "birthday-package" }
+            // Isi daftar produk bisa ditambahkan sesuai kebutuhan
+        ];
+
+        const filterDropdown = document.getElementById('filter');
+        const sortDropdown = document.getElementById('sort');
+        const productListDiv = document.getElementById('product-list');
+
+        // Fungsi untuk merender produk berdasarkan filter dan sort yang dipilih
+        function renderProducts() {
+            const filterValue = filterDropdown.value;
+            const sortValue = sortDropdown.value;
+
+            // Filter produk sesuai dengan dropdown filter
+            const filteredProducts = productList.filter(product => {
+                if (filterValue === 'all') {
+                    return true; // Tampilkan semua produk jika filter all dipilih
+                } else {
+                    return product.category === filterValue;
+                }
+            });
+
+            // Urutkan produk berdasarkan dropdown sort
+            filteredProducts.sort((a, b) => {
+                if (sortValue === 'default') {
+                    return 0; // Tidak ada pengurutan khusus
+                } else {
+                    return a.sort.localeCompare(b.sort); // Urutkan berdasarkan kategori sort
+                }
+            });
+
+            // Buat tampilan produk yang baru
+            productListDiv.innerHTML = '';
+            filteredProducts.forEach(product => {
+                const productElement = document.createElement('p');
+                productElement.textContent = product.name;
+                productListDiv.appendChild(productElement);
+            });
+        }
+
+        // Panggil fungsi renderProducts() saat dropdown berubah
+        filterDropdown.addEventListener('change', renderProducts);
+        sortDropdown.addEventListener('change', renderProducts);
+
+        // Render produk pertama kali saat halaman dimuat
+        renderProducts();
+    </script>
+</body>
+</html>

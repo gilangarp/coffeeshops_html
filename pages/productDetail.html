@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../style/output.css" rel="stylesheet">
+    <script src="../javascript/navbar.js"></script>
+</head>
+<body>
+    <header class="py-2 px-10 md:px-14 lg:px-20 bg-black bg-opacity-25 shadow lg:flex lg:justify-between lg:items-center">
+
+        <div class=" flex justify-between items-center "> 
+
+            <span class="flex items-center gap-4">
+                <div class="flex items-center">
+                    <img class="filter brightness-0 invert w-6 h-auto" src="../assets/icons/Vector.svg" alt="..." >
+                    <h1 class="text-xl pl-2 text-white">coffee Shop</h1>
+                </div>
+    
+                <nav class="text-sm flex gap-4 items-center list-none text-white">
+                    <li class="hidden lg:block"><a href="/">Home</a></li>
+                    <li class=" hidden lg:block"><a href="./pages/product.html">Product</a></li>
+                </nav>
+                
+            </span>
+
+            <div class="cursor-pointer teblock lg:hidden text-white">    
+                <svg onclick="menu(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                      
+            </div>
+
+        </div>
+
+        <nav class="hidden lg:block" id="drop" >
+            <ul class="lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute bg-black bg-opacity-25 lg:bg-transparent w-full left-0 lg:w-auto lg:py-0 py-6 lg:pl-0 pl-7 top-[-400] transition-all ease-in duration-500 ">
+
+                <li class="mx-4 my-2 lg:my-0"><a href="/" class="block lg:hidden text-white">Home</a></li>
+                <li class="mx-4 lg:my-0""><a href="./pages/product.html" class="block lg:hidden text-white">Product</a></li> 
+
+                <li class="mx-4 my-2 lg:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                </a></li>
+                <li class="mx-4 my-2 lg:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                </a></li>
+                
+                <li class="mx-4 my-2 lg:my-0""><a href="./pages/login.html"><button  class="navbar-nav sign-in rounded-lg px-6 py-2 border border-white bg-transparent text-white text-sm">Sign In</button></a></li>
+                <li class="mx-4 my-2 lg:my-0""><a href="./pages/register.html"><button class="navbar-nav sign-up rounded-lg px-6 py-2 bg-primary opacity-100 border-none text-sm">Sign Up</button></a></li>  
+
+            </ul> 
+        </nav>
+
+    </header>
+
+    <main class="">
+
+        <section class="min-h-screen grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1
+        ">
+
+            <div class=" py-5 pr-10 pl-10 md:pr-14 md:pl-14 lg:pr-5 lg:pl-20 grid grid-cols-1 grid-rows-[70%,30%] lg:grid-cols-1 lg:grid-rows-auto gap-2">
+                
+
+                <div class="w-full">
+                        <img class=" h-full w-full object-cover" src="../assets/images/image_product.png" alt="...">
+                </div>
+
+                <div class="grid grid-cols-3 gap-3" >
+
+                    <div class="">
+                       <img class="w-full h-[162px] object-cover" src="../assets/images/image_product.png" alt="..."> 
+                    </div>
+
+                    <div class="">
+                       <img class="w-full h-[162px] object-cover" src="../assets/images/image_product.png" alt="..."> 
+                    </div>
+
+                    <div class="">
+                        <img class="w-full h-[162px]  object-cover" src="../assets/images/image_product.png" alt="...">
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="py-5 pr-10 pl-10 md:pr-14 md:pl-14 lg:pl-5 lg:pr-20 gap-3 flex flex-col justify-center">
+
+                <h2 class="text-lg font-bold text-white p-3 bg-[#D00000] w-fit rounded-3xl">FLASH SALE!
+                </h2>
+
+                <h1 class="font-bold text-5xl">Hazelnut Latte</h1>
+
+                <div class="grid grid-cols-[auto,1fr] items-center">
+                    <p class="text-xs line-through text-red-800	pr-2">IDR 20.000</p>
+                    <p class="text-xl text-[#FF8906]">IDR 10.000</p>
+                </div>
+                <div class="grid grid-cols-[auto,1fr]">
+                    <div class=" text-[#FF8906]">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class=" pl-1">
+                        5/5
+                    </div>
+                </div>
+                <p class="text-gray-700 text-base">
+                    Cold brewing is a method of brewing that combines ground coffee and cool water and uses time
+                    instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as
+                    48 hours.
+                </p>
+
+                <div class="flex items-center border w-fit rounded-md">
+                    <button class="text-lg text-black border w-8 h-8 grid place-content-center border-primary rounded-md">
+                        -
+                    </button>
+                    <span class=" text-lg text-black px-5 ">
+                        3
+                    </span>
+                    <button class="text-lg text-black border w-8 h-8 grid place-content-center border-primary rounded-md">
+                        +
+                    </button>
+                </div>
+
+                <h1 class="text-lg font-bold">Choose Size</h1>
+                <div class="flex flex-row justify-between ">
+                    <button class=" py-2 w-full text-base text-black border-2 border-primary">Regular</button>
+                    <button class=" py-2 w-full text-base text-black border-2 ">Large</button>
+                    <button class=" py-2 w-full text-base text-black border-2 ">Medium</button>
+                </div>
+
+                <h1 class="text-lg font-bold">Hot/Ice?</h1>
+                <div class="flex flex-row justify-between ">
+                    <button class=" py-2 w-full text-base text-black border-2 border-primary">Ice</button>
+                    <button class=" py-2 w-full text-base text-black border-2 ">Hot</button>
+                </div>  
+
+                <div class="pt-14 flex flex-row gap-2 justify-between">
+                    <button class=" bg-orange-400 rounded-xl py-2 w-full text-black text-sm">
+                        Buy
+                    </button>
+                    <button class="rounded-xl py-2 border-2 w-full border-primary bg-transparent text-sm flex justify-center items-center gap-3 text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                        Add to chart</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="pl-10 pr-10 lg:pl-20 lg:pr-20 grid gap-3">
+            <h1 class="text-heading_mobile lg:text-heading_desktop text-black text-plus-jakarta ml-0">Recommendation <span class="text-[#8E6447]">For You</span></h1>
+
+            <div class="slide-content grid justify-items-center items-center grid-cols-1 md:grid-cols-[1fr,1fr] lg:grid-cols-[1fr,1fr,1fr]  gap-9 h-fit bg-white p-5">
+            
+                <div class=" lg:hidden w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                    <div class="w-full h-[268px] overflow-hidden">
+                        <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                    </div>
+                    <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                        <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                        <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                        <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                        <div class="flex w-full">
+                            <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                            <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                    <div class="w-full h-[268px] overflow-hidden">
+                        <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                    </div>
+                    <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                        <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                        <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                        <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                        <div class="flex w-full">
+                            <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                            <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                    <div class="w-full h-[268px] overflow-hidden">
+                        <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                    </div>
+                    <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                        <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                        <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                        <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                        <div class="flex w-full">
+                            <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                            <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+                <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                    <div class="w-full h-[268px] overflow-hidden">
+                        <img src="../assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                    </div>
+                    <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                        <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                        <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                        <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                        <div class="flex w-full">
+                            <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                            <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                        </div>
+                    
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+        
+    </main>
+    
+</body>
+</html>

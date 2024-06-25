@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style/output.css" rel="stylesheet">
+    <script src="./javascript/navbar.js"></script>
+    <style>
+        .slide-content::-webkit-scrollbar {
+          display: none; /* Untuk browser WebKit seperti Chrome/Safari */
+        }
+    </style>
+</head>
+<body class="m-0 box-border">
+    <header class="py-2 px-10 lg:px-20 bg-black bg-opacity-25 shadow lg:flex lg:justify-between lg:items-center">
+
+        <div class=" flex justify-between items-center "> 
+
+            <span class="flex items-center gap-4">
+                <div class="flex items-center">
+                    <img class="filter brightness-0 invert w-6 h-auto" src="../assets/icons/Vector.svg" alt="..." >
+                    <h1 class="text-xl pl-2 text-white">coffee Shop</h1>
+                </div>
+    
+                <nav class="text-sm flex gap-4 items-center list-none text-white">
+                    <li class="hidden lg:block"><a class="border-b-2 border-primary pb-2" href="/">Home</a></li>
+                    <li class=" hidden lg:block"><a href="./pages/product.html">Product</a></li>
+                </nav>
+                
+            </span>
+
+            <div class="cursor-pointer teblock lg:hidden text-white">    
+                <svg onclick="menu(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                      
+            </div>
+
+        </div>
+
+        <nav class="hidden lg:block" id="drop" >
+            <ul class="lg:flex lg:items-center z-[-1]lg::z-auto lg:static absolute bg-black bg-opacity-25 lg:bg-transparent w-full left-0 lg:w-auto lg:py-0 py-6 lg:pl-0 pl-7 top-[-400] transition-all ease-in duration-500 ">
+
+                <li class="mx-4 my-2 lg:my-0"><a href="/" class="block lg:hidden text-white">Home</a></li>
+                <li class="mx-4 lg:my-0""><a href="./pages/product.html" class="block lg:hidden text-white">Product</a></li> 
+
+                <li class="mx-4 my-2 lg:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                </a></li>
+                <li class="mx-4 my-2 lg:my-0 text-white"><a href="./pages/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                </a></li>
+                
+                <li class="mx-4 my-2 lg:my-0""><a href="./pages/login.html"><button  class="navbar-nav sign-in rounded-lg px-6 py-2 border border-white bg-transparent text-white text-sm">Sign In</button></a></li>
+                <li class="mx-4 my-2 lg:my-0""><a href="./pages/register.html"><button class="navbar-nav sign-up rounded-lg px-6 py-2 bg-primary opacity-100 border-none text-sm">Sign Up</button></a></li>  
+
+            </ul> 
+        </nav>
+
+    </header>
+    
+    <main>
+
+        <!-- hero section -->
+        <section class="min-h-screen grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
+
+            <article class="bg-gradient-to-r min-h-full flex flex-col place-content-center gap-2 lg:gap-4 text-white px-10 lg:px-0 lg:pl-20 lg:pr-5">
+
+                <h1 class="text-2xl lg:text-heading_desktop font-medium">Start Your Day with Coffee and Good Meals</h1>
+                <p class="text-base">We provide high quality beans, good taste, and healthy meals made by love just for you. Start your day with us for a bigger smile!</p>
+                <a href=""><button class="sign-up rounded-lg px-6 py-2 bg-orange-500 opacity-100 border-none text-sm">Get Started</button></a>
+                <div class="flex gap-4 pb-4"">
+                    <div class="gap-3 border-r  border-gray-400 pr-3">
+                        <h1 class="text-2xl lg:text-5xl">90+</h1>
+                        <p class="text-sm lg:text-base">Staff</p>
+                    </div>
+                    <div class="gap-3 border-r  border-gray-400 pr-3">
+                        <h1 class="text-2xl lg:text-5xl">30+</h1>
+                        <p class="text-sm lg:text-base">Stores</p>
+                    </div>
+                    <div class="gap-3 border-r  border-gray-400 pr-3">
+                        <h1  class="text-2xl lg:text-5xl">800+</h1>
+                        <p class="text-sm lg:text-base">Customer</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="h-full relative">
+                <img class="w-full h-full object-cover absolute bg-center" src="./assets/images/47fdff79cb40a5f1a62aef1f4cd64c3e.jpeg" alt="">
+            </div>
+
+        </section>
+
+        <!-- about section -->
+        <section class="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-1 h-fit lg:h-[70vh] ">
+
+            <article class="grid grid-rows-3pl-10 pr-10 lg:pl-20 lg:pr-5 gap-2 py-5 lg:py-10">
+
+                <div class="grid grid-cols-[auto,1fr] items-center gap-2">
+                    <div class="w-2 h-11 bg-primary"></div>
+                    <h1 class="text-2xl lg:text-heading_desktop font-medium text-black">We Provide <span class="text-gray-700">Good Coffee</span> and <span class="text-gray-700">Healthy Meals</span></h1>
+                </div>
+
+                <p class="text-text h-fit">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+
+                <div class="grid gap-2 ">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-green-600">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-text pl-2">High quality beans</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-green-600">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-text pl-2">Healthy meals, you can request the ingredients</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-green-600">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-text pl-2">Chat with our staff to get better experience for ordering</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-green-600">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-text pl-2">Free member card with a minimum purchase of IDR 200.000.</p>
+                    </div>
+                </div>
+
+            </article>            
+
+            <article class="hidden lg:block h-auto relative">
+                <img class="w-full h-full object-cover bg-no-repeat bg-top" src="./assets/images/1ff108caf42e05aafc2d71749bf4d116.png" alt="">
+            </article>
+
+        </section>
+
+        <!-- favorite-saction -->
+        <section class="min-h-screen grid grid-rows-[auto,1fr] items-center justify-center py-5 lg:py10">
+
+            <div class="pl-10 pr-10 lg:pl-20 lg:pr-5 grid items-center justify-center p-4 gap-1">
+                <h1 class="text-center text-heading_mobile lg:text-heading_desktop pb-4">Here is People’s <span class="text-[#8E6447]">favorite</span></h1>
+
+                <div class="bg-orange-500 w-16 h-2 mx-auto"></div>
+
+                <p class="text-text text-base text-center">Let’s choose and have a bit taste of poeple’s favorite. It might be yours too!</p>
+
+            </div>
+
+                <div class="pl-10 pr-10 lg:pl-20 lg:pr-20 slide-content grid justify-items-center items-center grid-cols-[1fr,1fr,1fr,1fr]  gap-9 h-fit bg-white overflow-x-scroll snap-mandatory snap-x p-5">
+
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="./assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="./assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="./assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="w-[230px] h-[411px] lg:w-[250px] lg:h-[431px] flex flex-col items-center shadow-md border-neutral-400 snap-center hover:box-s">
+                        <div class="w-full h-[268px] overflow-hidden">
+                            <img src="./assets/images/a63f096d3edcb57b0bc937039acae071.png" alt="..." class="h-full w-full object-cover transition-transform duration-300 ease-out transform hover:scale-[1.01]">        
+                        </div>
+                        <div class="border -translate-y-1/4 bg-white p-3 box-border border-neutral-400 w-[220px] h-fit flex flex-col place-items-center">
+                            <h1 class="font-medium text-xl text-[#0B132A] mb-3">Hazelnut Latte</h1>
+                            <p class="font-normal text-text text-sm mb-3">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                            <p class="font-medium text-xl mb-3 text-primary">IDR 20.000</p>
+                            <div class="flex w-full">
+                                <button class="py-1 w-full mr-2 bg-primary text-[#0B132A]border-transparent rounded-lg">buy</button>
+                                <button class="py-1 px-3 rounded-md border border-primary bg-transparent text-primary items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+                
+        </section>
+
+        <!--  -->
+        <section class="min-h-screen grid grid-rows-[auto,1fr] items-center justify-center pl-10 pr-10 lg:pl-20 lg:pr-20 py-5 lg:py-10">
+
+            <div class=" lg:pr-5 grid items-center justify-center gap-3 pb-9">
+                <h1 class="text-heading_mobile lg:text-heading_desktop font-medium text-[#8E6447] text-center">Visit Our Store <span class="text-[#0B132A]">in the Spot on the Map Below</span></h1>
+                <div class="bg-primary w-16 h-2 m-auto"></div>
+                <p class="font-normal text-base bg-center text-text text-center">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+            </div>
+
+            <div class=" w-full h-fit">
+                <img src="./assets/images/Huge Global.png" alt="peta">
+            </div>
+        
+        </section>
+
+        <!--  -->
+        <section class="min-h-screen lg:min-h-[50vh] grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 bg-gradient-to-r pl-10 pr-10 lg:pl-20 lg:pr-20 py-5 lg:py-10">
+            
+            <div class="flex items-center justify-center">
+                <img class="w-[289px] h-[261px] object-cover object-top" src="./assets/images/70840a4caeb335701029d52bbb650fae.jpeg" alt="...">
+            </div>
+
+            <div class="grid gap-1">
+                <p class=" text-white font-normal flex items-center">TESTIMONIAL</p>
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary w-2 h-12"></div>
+                    <h1 class="text-heading_mobile lg:text-heading_desktop text-white  ">Viezh Robert</h1>
+                </div>
+                <p class="text-base font-normal flex items-center text-primary">Manager Coffe Shop</p>
+                <p class="text-white text-base font-normal ">“Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!</p>
+                <div class="grid grid-cols-[auto,1fr]">
+                    <div class=" text-[#FF8906]">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="text-white pl-1">
+                        5/5
+                    </div>
+                </div>
+                <label >
+                    <button href="" class="py-2 px-2 rounded-[50%] bg-white "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                      </svg>
+                    </button>
+                    <button href="" class="py-2 px-2 rounded-[50%] bg-primary"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                      </svg>
+                    </button>
+                </label> 
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>
